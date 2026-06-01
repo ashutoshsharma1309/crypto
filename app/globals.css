@@ -127,6 +127,73 @@
   }
 }
 
+/* Cinematic Chronicle keyframes — global so inline `animation` refs resolve. */
+@keyframes twk {
+  0%, 100% { opacity: 0.22; }
+  50% { opacity: 0.9; }
+}
+@keyframes ember {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  15% { opacity: 0.8; }
+  100% { transform: translateY(-92vh) translateX(24px); opacity: 0; }
+}
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.3); }
+}
+@keyframes scarfwave {
+  0%, 100% { transform: translateY(0) scaleX(1); }
+  50% { transform: translateY(-3px) scaleX(1.06); }
+}
+@keyframes fogdrift {
+  0% { transform: translateX(-6%); }
+  100% { transform: translateX(6%); }
+}
+@keyframes rayspin {
+  to { transform: rotate(360deg); }
+}
+@keyframes bloompulse {
+  0%, 100% { opacity: 0.78; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.07); }
+}
+@keyframes shoot {
+  0% { transform: translate(0, 0); opacity: 0; }
+  8% { opacity: 1; }
+  55% { opacity: 1; }
+  100% { transform: translate(44vw, 26vh); opacity: 0; }
+}
+@keyframes idlesway {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.1%); }
+}
+@keyframes walkbob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+@keyframes shaftsway {
+  0%, 100% { transform: translateX(-1.5%) skewX(-14deg); opacity: 0.22; }
+  50% { transform: translateX(1.5%) skewX(-14deg); opacity: 0.4; }
+}
+@keyframes orbfloat {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+@keyframes dustfloat {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-60vh) translateX(20px); opacity: 0; }
+}
+@keyframes eyeflick {
+  0%, 100% { opacity: 0.9; }
+  45% { opacity: 0.55; }
+  70% { opacity: 1; }
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
 /* Respect reduced motion globally: kill transitions/animations. */
 @media (prefers-reduced-motion: reduce) {
   *,

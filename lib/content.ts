@@ -183,6 +183,103 @@ export const history = {
   ] satisfies HistoryRow[],
 };
 
+/* ----------------------------------------- 4.5 · the chronicle (cinematic) -- */
+
+export interface Chapter {
+  /** Top-left scene label, uppercase. */
+  label: string;
+  era?: string;
+  title: string;
+  /** Lower-third narration, in Mnema's voice. */
+  caption: string;
+  /** Short year shown on the timeline HUD. */
+  year?: string;
+}
+
+/**
+ * The History beat rendered as a movie: a continuous camera-pan across a dark
+ * world toward a golden tower of Memory. Chapter 0 is the title card; chapters
+ * 1–5 are the great losses, each a scene. Narration is Mnema's testimony.
+ * (See docs/STORYLINE.md — "The Great Ledger".)
+ */
+export const chronicle = {
+  eyebrow: "The core question",
+  brand: "Destiny",
+  chapters: [
+    {
+      label: "Prologue",
+      title: "The Great Ledger",
+      caption:
+        "For five thousand years, every fortune was handed a way to outlive its maker. Walk with me through the times we forgot.",
+    },
+    {
+      label: "The First Flame",
+      era: "~48 BC – 642 AD",
+      title: "The Burning of Alexandria",
+      caption:
+        "I watched the first great library take a breath of fire — and forget four hundred years in a single night.",
+      year: "48 BC",
+    },
+    {
+      label: "The Long Silence",
+      era: "5th century",
+      title: "The Fall of Rome",
+      caption:
+        "The roads fell quiet, and the records fell with them. An age forgot how to remember itself.",
+      year: "476 AD",
+    },
+    {
+      label: "The Erasure",
+      era: "16th century",
+      title: "The Maya Codices",
+      caption:
+        "Centuries of sky-knowledge were folded shut and set alight in a courtyard. The stars lost their scribes.",
+      year: "1562",
+    },
+    {
+      label: "The Scattering",
+      era: "1914 – 1945",
+      title: "The War Archives",
+      caption:
+        "The records of a century scattered like ash across two of them. So much was never recovered.",
+      year: "1945",
+    },
+    {
+      label: "The Unmaking",
+      era: "21st century",
+      title: "The Silent Key",
+      caption:
+        "Now the dark needs no fire. A single key falls silent — and a fortune was never there at all.",
+      year: "Today",
+    },
+    {
+      label: "The Rekindling",
+      era: "Now",
+      title: "The Covenant, Rewritten",
+      caption:
+        "But every dark wall can be lit again. This is where Destiny begins.",
+      year: "Now",
+    },
+  ] satisfies Chapter[],
+  /**
+   * Progress windows (0→1) per chapter across the pinned scroll.
+   * 0 = establishing wide shot · 1–5 = corridor monuments · 6 = tower arrival.
+   */
+  timing: [
+    [0.0, 0.15],
+    [0.15, 0.29],
+    [0.29, 0.43],
+    [0.43, 0.57],
+    [0.57, 0.71],
+    [0.71, 0.85],
+    [0.85, 1.0],
+  ] as [number, number][],
+  hint: "Scroll to begin",
+  povCue: "His path becomes yours",
+  /** Closing line as the tower of Memory takes the frame. */
+  resolve: "But every dark wall can be lit again.",
+};
+
 /* -------------------------------------------------------------- 5 · crisis -- */
 
 export const crisis = {

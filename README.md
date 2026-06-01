@@ -97,13 +97,15 @@ always carries meaning.
 
 - Scroll-triggered fade+rise reveals with staggered card grids (transform/opacity
   only, 60fps).
-- Two pinned "moment" sections: the **historical timeline** and the
-  **comparison matrix** (sticky header row).
-- The **History timeline** is dual-mode: on desktop (pointer + motion-OK) it
-  **pins and scrubs horizontally** — the track translates left→right with scroll,
-  a progress rail fills, and era nodes light at center. On mobile and under
-  reduced-motion it falls back to a clean, semantic vertical progress-rail `<ol>`.
-  (See [components/sections/History.tsx](components/sections/History.tsx).)
+- A **cinematic opening movie** (the Chronicle): a pinned, scroll-driven walk
+  through history — an establishing wide shot, a POV transition, a luminous
+  perspective corridor where the great losses approach as monuments, a year-axis
+  timeline HUD, and arrival at the tower of Memory. Spring-smoothed scrubbing,
+  mouse-parallax camera, transform/opacity only. On mobile and under
+  reduced-motion it degrades to a semantic vertical timeline. (See
+  [components/sections/Chronicle.tsx](components/sections/Chronicle.tsx) +
+  [components/cinematic/](components/cinematic/).)
+- One pinned "moment" section beyond the movie: the **comparison matrix**.
 - Count-up stat counters animate on viewport enter to **real** values.
 - A themed loader ("Cracking the vault", ~1.2s, skippable) rendered as a fixed
   overlay so it causes **no layout shift**.
